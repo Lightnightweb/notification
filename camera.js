@@ -19,11 +19,6 @@ class camera{
       };
     }
     camera(args) {
-      if( curSTREAM !== null ){
-        curSTREAM.getVideoTracks().forEach( (camera) => {
-          camera.stop();
-        });
-      }
       function camera(){
         if(args===1){
           navigator.mediaDevices.getUserMedia({
