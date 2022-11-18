@@ -46,5 +46,5 @@ class camera{
       return camera()
     }
   }
-  Scratch.extensions.register(new StrictEqualityExtension());
+  Scratch.extensions.register(new camera());
   
