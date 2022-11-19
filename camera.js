@@ -23,11 +23,9 @@ class camera{
         if(ONE===1){
           navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
          .then(stream => vi.srcObject = stream)
-         .catch(err => alert(`${err.name} ${err.message}`));
         }else{
           navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
          .then(stream => vi.srcObject = stream)
-         .catch(err => alert(`${err.name} ${err.message}`));
         }
       }
       return cameras()
