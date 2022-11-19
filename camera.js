@@ -21,21 +21,13 @@ class camera{
     camera(ONE) {
       function cameras(){
         if(ONE===1){
-          navigator.mediaDevices.getUserMedia({
-            audio: false,
-            video: {
-              width: 640, height: 480,
-              facingMode: "user"
-            }
-          })
+          navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+         .then(stream => vi.srcObject = stream)
+         .catch(err => alert(`${err.name} ${err.message}`));
         }else{
-          navigator.mediaDevices.getUserMedia({
-            audio: false,
-            video: {
-              width: 640, height: 480,
-              facingMode: { exact: "environment" }
-            }
-          })
+          navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
+         .then(stream => vi.srcObject = stream)
+         .catch(err => alert(`${err.name} ${err.message}`));
         }
       }
       return cameras()
