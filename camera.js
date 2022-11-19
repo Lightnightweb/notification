@@ -18,9 +18,9 @@ class camera{
         ]
       };
     }
-    camera(args) {
-      function camera(){
-        if(args===1){
+    camera(ONE) {
+      function cameras(){
+        if(ONE===1){
           navigator.mediaDevices.getUserMedia({
             audio: false,
             video: {
@@ -38,7 +38,7 @@ class camera{
           })
         }
       }
-      return camera()
+      return cameras()
     }
   }
   Scratch.extensions.register(new camera());
