@@ -18,8 +18,8 @@ class api {
         ]
       };
     }
-    api(args) {
-      fetch(args.ONE)
+    strictlyEquals(args) {
+      fetch("https://api-public.odpt.org/api/v4/odpt:Bus?odpt:operator=odpt.Operator:Toei")
         .then(response=>{
             return response.json();
         })
