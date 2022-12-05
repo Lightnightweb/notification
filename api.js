@@ -19,10 +19,17 @@ class api {
       };
     }
     api(args) {
-      fetch("https://api-public.odpt.org/api/v4/odpt:Bus?odpt:operator=odpt.Operator:Toei")
+      fetch(args.ONE)
         .then(response=>{
             return response.json();
         })
+        .then(data=>{
+           let a=data
+        })
+        .catch(error=>{
+            console.log("データ取得失敗")
+        })
+        return a
     }
   }
   Scratch.extensions.register(new api());
