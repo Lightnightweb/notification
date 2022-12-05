@@ -18,7 +18,7 @@ class api {
         ]
       };
     }
-    strictlyEquals(args) {
+    api(args) {
       fetch(args.ONE)
         .then(response=>{
             return response.json();
