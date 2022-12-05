@@ -1,3 +1,4 @@
+document.createElement("script")
 script.src="https://code.jquery.com/jquery-3.0.0.min.js";
 class api {
     getInfo() {
@@ -21,10 +22,11 @@ class api {
     }
     api(args) {
       fetch(args.ONE)
-      .then(Response=>{
+        .then(Response=>{
           return Response.json
       })
+      }
       
     }
-}
+
   Scratch.extensions.register(new api());
