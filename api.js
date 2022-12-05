@@ -1,4 +1,4 @@
-document.createElement("script")
+document.createElement(script)
 script.src="https://code.jquery.com/jquery-3.0.0.min.js";
 class api {
     getInfo() {
