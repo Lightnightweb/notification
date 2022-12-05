@@ -6,7 +6,7 @@ class api {
         blocks: [
           {
             opcode: 'api',
-            blockType: Scratch.BlockType.BOOLEAN,
+            blockType: Scratch.BlockType.REPORTER,
             text: '[ONE]を取得',
             arguments: {
               ONE: {
