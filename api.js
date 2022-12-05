@@ -24,12 +24,11 @@ class api {
             return response.json();
         })
         .then(data=>{
-           let a=data
+            return a
         })
         .catch(error=>{
             console.log("データ取得失敗")
         })
-        return a
     }
   }
   Scratch.extensions.register(new api());
