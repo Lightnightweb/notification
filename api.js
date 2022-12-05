@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 class api {
     getInfo() {
       return {
@@ -19,16 +20,14 @@ class api {
       };
     }
     api(args) {
-      fetch(args.ONE)
-        .then(response=>{
-            return response.json();
+        $(function(){       
+            $.ajax({
+            url:args.ONE
+            .done(function(data){
+                return data
+            })
         })
-        .then(data=>{
-            return a
-        })
-        .catch(error=>{
-            console.log("データ取得失敗")
-        })
+    })
     }
   }
   Scratch.extensions.register(new api());
