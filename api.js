@@ -24,7 +24,6 @@ class apisyutoku {
         .then((response)=>{
           return response.json
       })
-      return response.json
       }
       apisyutoku()
    }
