@@ -19,9 +19,8 @@ class api取得 {
       };
     }
     api取得(args) {
-      
       fetch(args.ONE)
-        .then(Response=>{
+        .then((Response)=>{
           return Response.json
       })
    }
