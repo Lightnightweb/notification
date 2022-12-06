@@ -21,7 +21,7 @@ class apisyutoku {
     apisyutoku(args) {
         return fetch(args.ONE)
           .then((response)=>{
-          return JSON.parse(JSON.stringify(response.json))
+          return JSON.stringify(JSON.pause(response.json))
       })
    }
 }
