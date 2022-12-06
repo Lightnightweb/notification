@@ -21,10 +21,10 @@ class apisyutoku{
     apisyutoku(args) {
       
       fetch(args.ONE)
-        .then(Response=>{
-          return Response.json
-        .catch(error=>{
-          return (error)
+        .then((Response)=>{
+          return Response.json();
+        .catch((error)=>{
+          return (error);
         })
       })
    }
