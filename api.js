@@ -1,11 +1,11 @@
-class aaaaaa {
+class api取得 {
     getInfo() {
       return {
-        id: 'aaaaaa', // change this if you make an actual extension!
-        name: 'aaaaaa',
+        id: 'api取得', // change this if you make an actual extension!
+        name: 'api取得',
         blocks: [
           {
-            opcode: 'aaaaaa',
+            opcode: 'api取得',
             blockType: Scratch.BlockType.REPORTER,
             text: '[ONE]を取得',
             arguments: {
@@ -18,14 +18,15 @@ class aaaaaa {
         ]
       };
     }
-    aaaaaa(args) {
+    api取得(args) {
+      
       fetch(args.ONE)
         .then(Response=>{
           return Response.json
         .catch(error=>{
-          return ("失敗")
+          return (error)
         })
       })
-   }  
+   }
 }
-Scratch.extensions.register(new aaaaaa());
+Scratch.extensions.register(new api取得());
