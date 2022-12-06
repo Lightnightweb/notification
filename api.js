@@ -7,7 +7,7 @@ class apisyutoku {
           {
             opcode: 'apisyutoku',
             blockType: Scratch.BlockType.REPORTER,
-            text: '[ONE]を取得',
+            text: 'api[ONE]を取得',
             arguments: {
               ONE: {
                 type: Scratch.ArgumentType.STRING,
@@ -21,7 +21,7 @@ class apisyutoku {
     apisyutoku(args) {
         return fetch(args.ONE)
         .then((response)=>{
-          let res=response.json
+          let res = JSON.stringify(response.json)
           return JSON.parse(res)
       })
    }
