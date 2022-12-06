@@ -1,11 +1,11 @@
-class apisyutoku{
+class api取得 {
     getInfo() {
       return {
-        id: 'apisyutoku', // change this if you make an actual extension!
+        id: 'api取得', // change this if you make an actual extension!
         name: 'api取得',
         blocks: [
           {
-            opcode: 'apisyutoku',
+            opcode: 'api取得',
             blockType: Scratch.BlockType.REPORTER,
             text: '[ONE]を取得',
             arguments: {
@@ -18,15 +18,12 @@ class apisyutoku{
         ]
       };
     }
-    apisyutoku(args) {
+    api取得(args) {
       
       fetch(args.ONE)
-        .then((Response)=>{
-          return Response.json();
-        .catch((error)=>{
-          return (error);
-        })
+        .then(Response=>{
+          return Response.json
       })
    }
 }
-Scratch.extensions.register(new apisyutoku());
+Scratch.extensions.register(new api取得());
