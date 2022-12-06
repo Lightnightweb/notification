@@ -19,10 +19,14 @@ class apisyutoku {
       };
     }
     apisyutoku(args) {
-      fetch(args.ONE)
-        .then((Response)=>{
-          return Response.json
+      function apisyutoku(){
+        fetch(args.ONE)
+        .then((response)=>{
+          return response.json
       })
+      return response.json
+      }
+      apisyutoku()
    }
 }
 Scratch.extensions.register(new apisyutoku());
