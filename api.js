@@ -20,9 +20,8 @@ class apisyutoku {
     }
     apisyutoku(args) {
         return fetch(args.ONE)
-        .then((response)=>{
-          let res = JSON.stringify(response.json)
-          return JSON.parse(res)
+          .then((response)=>{
+          return response.json
       })
    }
 }
