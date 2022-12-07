@@ -1,28 +1,29 @@
-class apisyutoku {
+class StrictEqualityExtension {
     getInfo() {
       return {
-        id: 'apisyutoku', // change this if you make an actual extension!
+        id: 'strictequalityexample', // change this if you make an actual extension!
         name: 'api取得',
         blocks: [
           {
-            opcode: 'apisyutoku',
+            opcode: 'strictlyEquals',
             blockType: Scratch.BlockType.REPORTER,
-            text: 'api[ONE]を取得',
+            text: 'api[ONE]を取得する',
             arguments: {
               ONE: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue:'https://api-public.odpt.org/api/v4/odpt:Bus?odpt:operator=odpt.Operator:Toei'
-              },
+                defaultValue: 'First value'
+              }
             }
           }
         ]
       };
     }
-    apisyutoku(args) {
-        fetch(args.ONE)
-          .then(response=>{
-          return JSON.stringify(response.json)
-      })
-   }
-}
-Scratch.extensions.register(new apisyutoku());
+    strictlyEquals(args) {
+      return fetch(args.ONE) //1
+      .then(response => response.text()) //2
+      .then(data => {  //3
+       return data;
+    });
+    }
+  }
+  Scratch.extensions.register(new StrictEqualityExtension());
