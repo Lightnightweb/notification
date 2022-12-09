@@ -1,7 +1,8 @@
+document.createElement("map")
 class StrictEqualityExtension {
     getInfo() {
       return {
-        id: 'strictequalityexample', // change this if you make an actual extension!
+        id: 'strictequalityexample',
         name: 'api取得',
         blocks: [
           {
@@ -14,6 +15,21 @@ class StrictEqualityExtension {
                 defaultValue: 'First value'
               }
             }
+          },
+          {
+            opcode: 'map',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'googleMapを表示[A][B]',
+            arguments: {
+              A: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: '140'
+              },
+              B: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: '35.5'
+              }
+            }
           }
         ]
       };
@@ -24,6 +40,14 @@ class StrictEqualityExtension {
       .then(data => {  //3
        return data;
     });
+    }
+    map(args){
+      var opts = {
+        center: new google.maps.LatLng(args.A,args.B),
+        zoom: 13
+    };
+    var map = new google.maps.Map(document.getElementById("map"), opts);
+    return map
     }
   }
   Scratch.extensions.register(new StrictEqualityExtension());
