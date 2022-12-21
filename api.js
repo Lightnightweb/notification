@@ -3,7 +3,7 @@ class StrictEqualityExtension {
     getInfo() {
       return {
         id: 'strictequalityexample',
-        name: 'api取得',
+        name: 'Web',
         blocks: [
           {
             opcode: 'strictlyEquals',
@@ -12,25 +12,21 @@ class StrictEqualityExtension {
             arguments: {
               ONE: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: 'First value'
+                defaultValue: 'Url'
               }
             }
           },
           {
-            opcode: 'map',
+            opcode: 'Webopen',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'googleMapを表示[A][B]',
+            text: '[Page]をブラウザで開く',
             arguments: {
-              A: {
+              Page: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: '140'
-              },
-              B: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: '35.5'
+                defaultValue: 'Url'
               }
             }
-          }
+          },
         ]
       };
     }
@@ -41,13 +37,9 @@ class StrictEqualityExtension {
        return data;
     });
     }
-    map(args){
-      var opts = {
-        center: new google.maps.LatLng(args.A,args.B),
-        zoom: 13
-    };
-    var map = new google.maps.Map(document.getElementById("map"), opts);
-    return map
+    Webopen(args){
+        let Urlopen=window.open(args)
+        return Urlopen
     }
   }
   Scratch.extensions.register(new StrictEqualityExtension());
