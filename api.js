@@ -38,7 +38,7 @@ class StrictEqualityExtension {
     });
     }
     Webopen(args){
-        let Urlopen=window.open(args)
+        let Urlopen=window.open(args.Page)
         return Urlopen
     }
   }
