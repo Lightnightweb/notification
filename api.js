@@ -35,13 +35,7 @@ class StrictEqualityExtension {
     });
     }
     Webopen(){
-      return navigator.geolocation.getCurrentPosition(success, fail)
-      function success(pos){
-        return pos
-      }
-      function fail(error){
-        return ("位置情報が取得できませんでした")
-      }
+      return navigator.geolocation.getCurrentPosition()
     }
   }
   Scratch.extensions.register(new StrictEqualityExtension());
