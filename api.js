@@ -18,7 +18,7 @@ class StrictEqualityExtension {
           },
           {
             opcode: 'Webopen',
-            blockType: Scratch.BlockType.COMMAND,
+            blockType: Scratch.BlockType.STRING,
             text: '位置情報を取得',
             arguments: {
 
