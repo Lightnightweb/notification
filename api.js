@@ -19,12 +19,9 @@ class StrictEqualityExtension {
           {
             opcode: 'Webopen',
             blockType: Scratch.BlockType.COMMAND,
-            text: '[Page]をブラウザで開く',
+            text: '位置情報を取得',
             arguments: {
-              Page: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: 'Url'
-              }
+
             }
           },
         ]
@@ -37,9 +34,14 @@ class StrictEqualityExtension {
        return data;
     });
     }
-    Webopen(args){
-        let Urlopen=window.open(args.Page)
-        return Urlopen
+    Webopen(){
+      return navigator.geolocation.getCurrentPosition(success, fail)
+      function success(pos){
+        return pos
+      }
+      function fail(error){
+        return ("位置情報が取得できませんでした")
+      }
     }
   }
   Scratch.extensions.register(new StrictEqualityExtension());
