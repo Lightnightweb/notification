@@ -18,22 +18,18 @@ class StrictEqualityExtension {
       };
     }
     ichix(){
-      function ichi1(){
-        navigator.geolocation.getCurrentPosition(ichi2);
-      }
+      let ichix=navigator.geolocation.getCurrentPosition(ichi2)
       function ichi2(position) {
         return position.coords.longitude
       }
-       return ichi1()
+      return ichix
     }
-    ichiy(){
-      function ichi1(){
-        navigator.geolocation.getCurrentPosition(ichi2);
-      }
+    ichiy(){   
+      let ichiy=navigator.geolocation.getCurrentPosition(ichi2)
       function ichi2(position) {
         return position.coords.latitude
       }
-      return ichi1()
+      return ichiy
     }
   }
   Scratch.extensions.register(new StrictEqualityExtension());
